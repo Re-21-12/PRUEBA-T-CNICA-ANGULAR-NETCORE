@@ -45,6 +45,7 @@ Permite consultar los resultados de cada encuesta.
 - **Postman**
 - **JWT**
 - **SQL Server**
+- **Bootrstrap**
 
 <hr/>
 
