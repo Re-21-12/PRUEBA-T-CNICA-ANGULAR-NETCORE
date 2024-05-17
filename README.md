@@ -11,7 +11,7 @@ Este proyecto consiste en el desarrollo de una aplicación de encuestas utilizan
 ## Funcionalidades
 
 ### 1. Login con Usuario y Contraseña
-![Login](https://github.com/Re-21-12/Pruebatecnica-Angular-NetCore/assets/104967229/7a927e50-f25b-4416-bd06-7ed64d12b752)
+![image](https://github.com/Re-21-12/PRUEBA-T-CNICA-ANGULAR-NETCORE/assets/104967229/063111cb-1349-4fa8-bba1-8f06ab82f382)
 
 ### 2. Gestión de Encuestas (Requiere Login)
 Permite la creación, modificación y eliminación de encuestas. Cada encuesta incluye:
@@ -25,18 +25,18 @@ Permite la creación, modificación y eliminación de encuestas. Cada encuesta i
 
 Al crear el formulario se generará un link único que servirá para llenar la encuesta.
 
-![Gestión de Encuestas](https://github.com/Re-21-12/Pruebatecnica-Angular-NetCore/assets/104967229/1e8784bb-d5d1-49f5-9acf-96ace94e7ab4)
+![image](https://github.com/Re-21-12/PRUEBA-T-CNICA-ANGULAR-NETCORE/assets/104967229/c52406fa-2a45-4699-adfa-00c23fdd8bc8)
 
 ### 3. Llenado de Encuestas (No Requiere Login)
 Accediendo al link generado, se desplegarán los campos configurados en la encuesta y se permitirá ingresar los valores correspondientes. Al guardar la encuesta, se almacenarán los valores ingresados para cada campo.
 
-![Llenado de Encuestas](https://github.com/Re-21-12/Pruebatecnica-Angular-NetCore/assets/104967229/a9510fcc-f231-46f3-9f1a-3f528068eca3)
-![Llenado de Encuestas](https://github.com/Re-21-12/Pruebatecnica-Angular-NetCore/assets/104967229/f3758c0c-16be-45d6-b1d3-094e83e4043d)
+![image](https://github.com/Re-21-12/PRUEBA-T-CNICA-ANGULAR-NETCORE/assets/104967229/b6946ce8-4945-4c59-9a34-19196c41d7a8)
+![image](https://github.com/Re-21-12/PRUEBA-T-CNICA-ANGULAR-NETCORE/assets/104967229/bbbdcfe6-01da-4eb5-ac9a-f15566e9a900)
 
 ### 4. Consulta de Resultados de Encuestas (Requiere Login)
 Permite consultar los resultados de cada encuesta.
 
-![Consulta de Resultados](https://github.com/Re-21-12/Pruebatecnica-Angular-NetCore/assets/104967229/a2e00492-3d74-4e9e-aa27-ccc369a1a6e6)
+![image](https://github.com/Re-21-12/PRUEBA-T-CNICA-ANGULAR-NETCORE/assets/104967229/fe01ff05-787a-448e-aee2-90ff9f0147d6)
 
 ## Tecnologías Utilizadas
 - **Angular v17**
@@ -50,9 +50,7 @@ Permite consultar los resultados de cada encuesta.
 
 ## Video con programa en funcionamientoo
 
-
-https://github.com/Re-21-12/Pruebatecnica-Angular-NetCore/assets/104967229/311a1845-58b4-4d7f-9ea4-0c5f6bccccb9
-
+https://github.com/Re-21-12/PRUEBA-T-CNICA-ANGULAR-NETCORE/assets/104967229/d0775b9e-e791-46f3-83d7-168c9fab360e
 
 <h1>Collection en POSTMAN</h1>
 
