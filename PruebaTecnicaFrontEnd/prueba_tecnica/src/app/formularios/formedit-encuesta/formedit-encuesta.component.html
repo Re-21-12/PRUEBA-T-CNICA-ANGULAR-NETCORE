@@ -1,0 +1,73 @@
+<div class="container" style="margin-top: 4rem">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="card shadow-lg p-3 mb-5 bg-white rounded">
+          <div class="card-body">
+            <h5 class="card-title text-center mb-4">Actualizar Encuesta</h5>
+            <form (submit)="onUpdate()" #form="ngForm">
+              <!-- Link del Formulario (ID) -->
+              <div class="form-group">
+                <label for="linkFormulario">Link del Formulario</label>
+                <input
+                  disabled
+                  name="linkFormulario"
+                  id="linkFormulario"
+                  class="form-control"
+                  type="text"
+                  [(ngModel)]="encuesta.linkFormulario"
+                />
+              </div>
+              <!-- Nombre de la Encuesta -->
+              <div class="form-group">
+                <label for="nombreEncuesta">Nombre de la Encuesta</label>
+                <input
+                  name="nombreEncuesta"
+                  id="nombreEncuesta"
+                  class="form-control"
+                  type="text"
+                  placeholder="Nombre de la encuesta"
+                  [(ngModel)]="encuesta.nombreEncuesta"
+                  required
+                  #nombreEncuesta="ngModel"
+                />
+                <div
+                  *ngIf="nombreEncuesta.invalid && (nombreEncuesta.dirty || nombreEncuesta.touched)"
+                  class="alert alert-danger mt-2"
+                >
+                  Debe escribir un nombre para la encuesta
+                </div>
+              </div>
+              <!-- Descripción de la Encuesta -->
+              <div class="form-group">
+                <label for="descripcionEncuesta">Descripción de la Encuesta</label>
+                <textarea
+                  name="descripcionEncuesta"
+                  id="descripcionEncuesta"
+                  class="form-control"
+                  placeholder="Descripción de la encuesta"
+                  [(ngModel)]="encuesta.descripcionEncuesta"
+                  required
+                  #descripcionEncuesta="ngModel"
+                ></textarea>
+                <div
+                  *ngIf="descripcionEncuesta.invalid && (descripcionEncuesta.dirty || descripcionEncuesta.touched)"
+                  class="alert alert-danger mt-2"
+                >
+                  Debe ingresar una descripción para la encuesta
+                </div>
+              </div>
+              <!-- Botón de enviar -->
+              <button
+                type="submit"
+                class="btn btn-secondary btn-block mt-4"
+                [disabled]="form.invalid"
+              >
+                Actualizar Encuesta
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

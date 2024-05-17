@@ -1,0 +1,32 @@
+<div class="container shadow" style="max-height: 600px; overflow-y: auto">
+  <div class="row row-cols-1 row-cols-md-3" style="margin-top: 2rem">
+    @for (campo of Campos; track $index) {
+    <div class="col mt-2">
+      <div class="card rounded text-dark">
+        <div class="card-header">
+          <h5 class="card-title">{{ campo.tituloCampo }}</h5>
+        </div>
+        <div class="card-body">
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              <strong>Nombre:</strong> {{ campo.nombreCampo }}
+            </li>
+            <li class="list-group-item">
+              <strong>Es Requerido:</strong>
+              @if (campo.esrequerido == 's' ) {
+              <p>Si</p>
+              }@else {
+              <p>No</p>
+               }
+            </li>
+            <li class="list-group-item">
+              <strong>Tipo:</strong> {{campo.tipoCampo }}
+            </li>
+          </ul>
+        </div>
+        <div class="card-footer text-center"></div>
+      </div>
+    </div>
+    }
+  </div>
+</div>

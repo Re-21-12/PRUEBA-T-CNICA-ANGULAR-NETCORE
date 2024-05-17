@@ -1,0 +1,95 @@
+<!-- 
+
+    CREAR ACTUALIZAR Y ELIMINAR FORMULARIO
+
+ -->
+
+<!-- 
+
+LLENAR FORMULARIO
+
+  -->
+
+<!-- 
+
+VER RESULTADOS
+
+   -->
+<nav>
+  <ul class="nav nav-underline justify-content-center">
+    <li class="nav-item">
+      <a
+        class="nav-link"
+        routerLink="/formularios/form-campo"
+        routerLinkActive="active"
+        >Crear Campos</a
+      >
+    </li>
+
+    <li class="nav-item">
+      <a
+        class="nav-link"
+        routerLink="/formularios/form-encuesta"
+        routerLinkActive="active"
+        >Crear Encuesta</a
+      >
+    </li>
+  </ul>
+</nav>
+
+<div class="container shadow" style="max-height: 600px; overflow-y: auto">
+  <div class="row row-cols-1 row-cols-md-3" style="margin-top: 2rem">
+    @for (encuesta of Encuestas; track $index) {
+    <div class="col mt-2">
+      <div class="card rounded text-dark">
+        <div class="card-header">
+          <h5 class="card-title">{{ encuesta.nombreEncuesta }}</h5>
+        </div>
+        <div class="card-body">
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              <strong>Descripción:</strong> {{ encuesta.descripcionEncuesta }}
+            </li>
+            <li class="list-group-item">
+              <strong>Link:</strong> {{ encuesta.linkFormulario }}
+            </li>
+            <li class="list-group-item">
+              <i
+              [routerLink]="['/formularios/list-campo/', encuesta.linkFormulario]"
+              class="bi bi-eye icon-hover align-items-center  "
+            >
+              Campos Asignados
+            </i>
+            </li>
+            <li class="list-group-item">
+              <i
+              [routerLink]="['/formularios/resultados', encuesta.linkFormulario]"
+              class="bi bi-hand-thumbs-up-fill icon-hover"
+            >
+              Respuestas
+            </i>
+            </li>
+          </ul>
+        </div>
+        <div class="card-footer grid">
+          <button
+            [routerLink]="['/formularios/form-edit/', encuesta.linkFormulario]"
+            class="btn btn-outline-dark"
+          >
+            Editar
+            <i class="bi bi-pencil-square"></i>
+          </button>
+          <button
+            class="btn btn-outline-danger  "
+            (click)="onDelete(encuesta.linkFormulario)"
+          >
+            Eliminar
+            <i class="bi bi-trash2"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    }
+  </div>
+</div>

@@ -1,0 +1,144 @@
+<div class="container" style="margin-top: 4rem">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card shadow-lg p-3 mb-5 bg-white rounded">
+        <div class="card-body">
+          <h5 class="card-title text-center mb-4">Crear Nuevo Campo</h5>
+          <form (submit)="onSubmit()" #form="ngForm">
+            <!-- Nombre del Campo -->
+            <div class="form-group">
+              <label for="nombreCampo">Nombre del Campo</label>
+              <input
+                name="nombreCampo"
+                id="nombreCampo"
+                class="form-control"
+                type="text"
+                placeholder="Nombre del campo"
+                [(ngModel)]="campo.nombreCampo"
+                required
+                #nombreCampo="ngModel"
+              />
+              <div
+                *ngIf="
+                  nombreCampo.invalid &&
+                  (nombreCampo.dirty || nombreCampo.touched)
+                "
+                class="alert alert-danger mt-2"
+              >
+                Debe ingresar un nombre para el campo
+              </div>
+            </div>
+            <!-- Título del Campo -->
+            <div class="form-group">
+              <label for="tituloCampo">Título del Campo</label>
+              <input
+                name="tituloCampo"
+                id="tituloCampo"
+                class="form-control"
+                type="text"
+                placeholder="Título del campo"
+                [(ngModel)]="campo.tituloCampo"
+                required
+                #tituloCampo="ngModel"
+              />
+              <div
+                *ngIf="
+                  tituloCampo.invalid &&
+                  (tituloCampo.dirty || tituloCampo.touched)
+                "
+                class="alert alert-danger mt-2"
+              >
+                Debe ingresar un título para el campo
+              </div>
+            </div>
+            <!-- Es Requerido -->
+            <div class="form-group">
+              <label for="esrequerido">Es Requerido</label>
+              <select
+                name="esrequerido"
+                id="esrequerido"
+                class="form-control"
+                [(ngModel)]="campo.esrequerido"
+                required
+                #esrequerido="ngModel"
+              >
+                <option value="s">Sí</option>
+                <option value="n">No</option>
+              </select>
+              <div
+                *ngIf="
+                  esrequerido.invalid &&
+                  (esrequerido.dirty || esrequerido.touched)
+                "
+                class="alert alert-danger mt-2"
+              >
+                Debe seleccionar si el campo es requerido
+              </div>
+            </div>
+            <!-- Tipo de Campo -->
+            <div class="form-group">
+              <label for="tipoCampo">Tipo de Campo</label>
+              <select
+                name="tipoCampo"
+                id="tipoCampo"
+                class="form-control"
+                [(ngModel)]="campo.tipoCampo"
+                required
+                #tipoCampo="ngModel"
+              >
+                <option value="text">Texto</option>
+                <option value="number">Número</option>
+                <option value="date">Fecha</option>
+                <!-- Agrega más opciones según sea necesario -->
+              </select>
+              <div
+                *ngIf="
+                  tipoCampo.invalid && (tipoCampo.dirty || tipoCampo.touched)
+                "
+                class="alert alert-danger mt-2"
+              >
+                Debe seleccionar un tipo de campo
+              </div>
+            </div>
+            <!-- Link del Formulario -->
+            <div class="form-group">
+              <label for="linkFormulario">Link del Formulario</label>
+              <select
+                name="linkFormulario"
+                id="linkFormulario"
+                class="form-control"
+                type="text"
+                placeholder="Link del formulario"
+                [(ngModel)]="campo.linkFormulario"
+                required
+                #linkFormulario="ngModel"
+              >
+                <option></option>
+                @for (encuesta of Encuestas; track $index) {
+                <option [value]=encuesta.linkFormulario>{{ encuesta.nombreEncuesta }}</option>
+                }
+              </select>
+              <div
+                *ngIf="
+                  linkFormulario.invalid &&
+                  (linkFormulario.dirty || linkFormulario.touched)
+                "
+                class="alert alert-danger mt-2"
+              >
+                Debe ingresar un link del formulario
+              </div>
+            </div>
+            <!-- Botón de enviar -->
+            <button
+              type="submit"
+              class="btn btn-primary btn-block mt-4"
+              [disabled]="form.invalid"
+            >
+              Crear Campo
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

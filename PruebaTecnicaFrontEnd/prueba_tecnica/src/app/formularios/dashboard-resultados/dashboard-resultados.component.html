@@ -1,0 +1,44 @@
+<div class="container shadow" style="max-height: 600px; overflow-y: auto">
+    <p class="text-center mt-3">Usted esta viendo los resultados de la encuesta</p>
+
+    <h1 class="text-center mt-3">{{ Encuesta.nombreEncuesta }}</h1>
+    <div class="row row-cols-1 row-cols-md-3" style="margin-top: 2rem">
+      @for (campo of Campos; track $index) {
+      <div class="col mt-2">
+        <div class="card rounded text-dark">
+          <div class="card-header">
+            <h5 class="card-title">{{ campo.tituloCampo }}</h5>
+          </div>
+          <div class="card-body">
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">
+                <strong>Nombre:</strong> {{ campo.nombreCampo }}
+              </li>
+              <li class="list-group-item">
+                <strong>Es Requerido:</strong>
+                @if (campo.esrequerido == 's') {
+                <p>Sí</p>
+                } @else {
+                <p>No</p>
+                }
+              </li>
+              <li class="list-group-item">
+                <strong>Tipo:</strong> {{ campo.tipoCampo }}
+              </li>
+              <li class="list-group-item">
+                <strong>Respuesta:</strong>
+                @for (respuesta of Respuestas; track $index) {
+                @if (campo.id == respuesta.idCampo) {
+                <div>{{ respuesta.valor || 'No hay respuesta' }}</div>
+                }
+                }
+              </li>
+            </ul>
+          </div>
+          <div class="card-footer text-center"></div>
+        </div>
+      </div>
+      }
+    </div>
+  </div>
+  

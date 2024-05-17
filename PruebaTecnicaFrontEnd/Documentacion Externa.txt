@@ -1,0 +1,19 @@
+https://www.youtube.com/watch?v=f7unUpshmpA <- info
+
+Se requiere CRUD de formularios que ocupe un login 
+@input padre a hijo
+@output hijo a padre
+
+el read moostrara una lista cono los formularioo y a traves de ahi se llenara la encuesta deseada
+
+app.config.ts es el nuevo app.module
+
+Pasos
+
+// Crear un proyecto	
+
+ng new prueba_tecnica
+
+// Abrir en VsCode	
+code .
+

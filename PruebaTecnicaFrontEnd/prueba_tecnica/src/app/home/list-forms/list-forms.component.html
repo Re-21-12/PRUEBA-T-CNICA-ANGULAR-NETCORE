@@ -1,0 +1,34 @@
+<div class="container shadow" style="max-height: 600px; overflow-y: auto">
+  <div class="row row-cols-1 row-cols-md-3" style="margin-top: 2rem">
+    @for (encuesta of Encuestas; track $index) {
+    <div class="col mt-2">
+      <div class="card rounded text-dark">
+        <div class="card-header">
+          <h5 class="card-title">
+            <strong>Encuesta:</strong> {{ encuesta.nombreEncuesta }}
+          </h5>
+        </div>
+        <div class="card-body">
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              <strong>Descripción:</strong> {{ encuesta.descripcionEncuesta }}
+            </li>
+            <li class="list-group-item">
+              <button
+                [routerLink]="['/home/llenar', encuesta.linkFormulario]"
+                class="btn btn-outline-dark"
+              >
+                Llenar Encuesta
+
+                <i class="bi bi-pen-fill"></i>
+              </button>
+            </li>
+          </ul>
+        </div>
+
+        <div class="card-footer text-center"></div>
+      </div>
+    </div>
+    }
+  </div>
+</div>

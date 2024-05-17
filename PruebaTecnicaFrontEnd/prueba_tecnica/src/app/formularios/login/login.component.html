@@ -1,0 +1,58 @@
+<div class="container" style="margin-top: 4rem">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card shadow-lg p-3 mb-5 bg-white rounded">
+        <div class="card-body">
+          <h5 class="card-title text-center mb-4">Ingresar</h5>
+          <form (submit)="onSubmit()" #form="ngForm">
+            <!-- Nombre de la Materia -->
+            <div class="form-group">
+              <label for="correo">Correo</label>
+              <input
+                name="correo"
+                id="correo"
+                class="form-control"
+                type="email"
+                placeholder="mario@gmail.com"
+                [(ngModel)]="login.correo"
+                required
+                #correo="ngModel"
+              />
+              <div
+                *ngIf="correo.invalid && (correo.dirty || correo.touched)"
+                class="alert alert-danger mt-2"
+              >
+                Debe ingresar un correo
+              </div>
+              <label for="clave">Clave</label>
+              <input
+                name="clave"
+                id="clave"
+                class="form-control"
+                type="password"
+                [(ngModel)]="login.clave"
+                required
+                #clave="ngModel"
+              />
+              <div
+                *ngIf="clave.invalid && (clave.dirty || clave.touched)"
+                class="alert alert-danger mt-2"
+              >
+                Debe ingresar una clave
+              </div>
+            </div>
+            <!-- Botón de enviar -->
+            <button
+            type="submit"
+            class="btn btn-primary btn-block mt-4"
+            [disabled]="form.invalid"
+          >
+            Ingresar
+          </button>
+          
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

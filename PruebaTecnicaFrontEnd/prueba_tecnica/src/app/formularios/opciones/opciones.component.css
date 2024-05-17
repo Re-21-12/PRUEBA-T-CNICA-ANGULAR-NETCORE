@@ -1,0 +1,27 @@
+.icon-hover {
+    transition: color 0.3s ease;
+  }
+  
+  .icon-hover:hover {
+    color: #007bff; /* Cambia a tu color deseado */
+    cursor: pointer;
+  }
+  
+  .card-footer.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    padding: 1rem;
+  }
+  
+  .card-footer .btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .card-footer .btn i {
+    margin-left: 0.5rem;
+  }
+  
+  

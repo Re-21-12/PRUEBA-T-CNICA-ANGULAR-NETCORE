@@ -1,0 +1,92 @@
+<div class="container" style="margin-top: 4rem">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="card shadow-lg p-3 mb-5 bg-white rounded">
+          <div class="card-body">
+            <h5 class="card-title text-center mb-4">Encuesta</h5>
+            <form (submit)="onSubmit()" #form="ngForm">
+              <!-- Nombre de la Encuesta -->
+              <h1 class="text-center">{{Encuesta.nombreEncuesta}}</h1>
+
+              @for (campo of Campos; track $index){
+              <div class="form-group">
+                <p for="nombreCampo"><strong class="bold">{{campo.nombreCampo}}</strong></p>
+                @switch (campo.tipoCampo) {
+                    @case ("text") {
+                        <textarea
+                        [name]=campo.nombreCampo
+                        [id]=campo.nombreCampo
+                        class="form-control"
+                        type="text"
+                        placeholder="Ingrese un texto"
+                        (input)="onInputChange($event, campo)"
+                        [required]="campo.esrequerido === 's'"
+                        #text="ngModel"
+                        ngModel
+                      ></textarea>
+                      <div
+                      *ngIf="text.invalid && (text.dirty ||text.touched)"
+                      class="alert alert-danger mt-2"
+                    >
+                      Debe escribir un nombre para la actividad
+                    </div>
+                    }
+                    @case ("number") {
+                        <input
+                        [name]=campo.nombreCampo
+                        [id]=campo.nombreCampo
+                        class="form-control"
+                        type="number"
+                        placeholder="0"
+                        (input)="onInputChange($event, campo)"
+                        [required]="campo.esrequerido === 's'"
+                        min="0"
+                        #numero="ngModel"
+                        ngModel
+                      />
+                      <div
+                      *ngIf="numero.invalid && (numero.dirty || numero.touched)"
+                      class="alert alert-danger mt-2"
+                    >
+                      Debe ingresar un numero para la actividad
+                    </div>
+                    }
+                    @case ("date") {
+                        <input
+                        [name]=campo.nombreCampo
+                        [id]=campo.nombreCampo
+                        class="form-control"
+                        type="date"
+                        [required]="campo.esrequerido === 's'"
+                        (input)="onInputChange($event, campo)"
+                        #date="ngModel"
+                        ngModel
+                      />
+                      <div
+                      *ngIf="date.invalid && (date.dirty || date.touched)"
+                      class="alert alert-danger mt-2"
+                    >
+                      Debe ingresar una fecha para la actividad
+                    </div>
+                    }
+                }
+      
+              </div>
+              }
+             
+              <!-- Botón de enviar -->
+              <button
+              type="submit"
+              class="btn btn-primary btn-block mt-4"
+              [disabled]="form.invalid"
+            >
+              Ingresar
+            </button>
+                   
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
